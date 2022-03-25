@@ -1,57 +1,114 @@
 body {
-    margin: 2em;
-    font-family: helvetica, arial, sans-serif;
-    background-color: slategrey;
-    color: white;
-  }
-  
-  h1 {
-    font-family: verdana, arial, sans-serif;
-  }
-  
-  button {
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  #gameButtonArea > button {
-    width: 200px;
-    height: 200px;
-    margin: 2px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  #Btn1 {
-    background: lightgreen;
-  }
-  #Btn1:active,
-  #Btn1.lit {
-    background: green;
-  }
-  
-  #Btn2 {
-    background: blue;
-  }
-  #Btn2:active,
-  #Btn2.lit {
-    background: darkblue;
-  }
-  
-  #Btn3 {
-    background: red;
-  }
-  #Btn3:active,
-  #Btn3.lit {
-    background: darkred;
-  }
-  
-  #Btn4 {
-    background: yellow;
-  }
-  #Btn4:active,
-  #Btn4.lit {
-    background: gold;
-  }
+  margin: 2em;
+  font-family: helvetica, arial, sans-serif;
+  background-color: #32373e;
+  color: white;
+}
+
+h1 {
+  font-family: verdana, arial, sans-serif;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#startBtn {
+  background: transparent;
+  background-image: url("assets\play.png");
+  background-size: cover;
+  height: 75px;
+  width: 80px;
+  border-radius: 200px;
+}
+#stopBtn {
+  background: transparent;
+  background-image: url("assets\stop.png");
+  background-size: cover;
+  height: 75px;
+  width: 80px;
+  border-radius: 200px;
+}
+
+#gameButtonArea > button {
+  width: 175px;
+  height: 275px;
+  margin: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+#Btn1 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn1:active,
+#Btn1.lit {
+  background: green;
+}
+
+#Btn2 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn2:active,
+#Btn2.lit {
+  background: darkblue;
+}
+
+#Btn3 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn3:active,
+#Btn3.lit {
+  background: darkred;
+}
+
+#Btn4 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn4:active,
+#Btn4.lit {
+  background: gold;
+}
+
+#Btn5 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn5:active,
+#Btn5.lit {
+  background: aqua;
+}
+
+#Btn6 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn6:active,
+#Btn6.lit {
+  background: blueviolet;
+}
+
+#Btn7 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn7:active,
+#Btn7.lit {
+  background: magenta;
+}
+
+#Btn8 {
+  background-image: url("assets\card.jpg");
+  background-size: cover;
+}
+#Btn8:active,
+#Btn8.lit {
+  background: lime;
+}

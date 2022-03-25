@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
@@ -17,34 +17,22 @@
   <body>
     <!-- this is the start of content -->
     <h1>Remember Me!</h1>
-    <p>Welcome to the game! Repeat back the pattern by pressing buttons.</p>
-    <button id="startBtn" onclick="startGame()">Start</button>
-    <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
+    <p>Welcome to the game! Repeat back the pattern by flipping cards.</p>
+    <button id="startBtn" onclick="startGame()"></button>
+    <button id="stopBtn" class="hidden" onclick="stopGame()"></button>
     <div id="gameButtonArea">
-      <button
-        id="Btn1"
-        onclick="guess(1)"
-        onmousedown="startTone(1)"
-        onmouseup="stopTone()"
-      ></button>
-      <button
-        id="Btn2"
-        onclick="guess(2)"
-        onmousedown="startTone(2)"
-        onmouseup="stopTone()"
-      ></button>
-      <button
-        id="Btn3"
-        onclick="guess(3)"
-        onmousedown="startTone(3)"
-        onmouseup="stopTone()"
-      ></button>
-      <button
-        id="Btn4"
-        onclick="guess(4)"
-        onmousedown="startTone(4)"
-        onmouseup="stopTone()"
-      ></button>
+      <audio
+        src="assets\Card-flip-sound-effect.mp3"
+        id="cardFlipSound"
+      ></audio>
+      <button id="Btn1" onclick="guess(1)" onmousedown="playMyAudio()"></button>
+      <button id="Btn2" onclick="guess(2)" onmousedown="playMyAudio()"></button>
+      <button id="Btn3" onclick="guess(3)" onmousedown="playMyAudio()"></button>
+      <button id="Btn4" onclick="guess(4)" onmousedown="playMyAudio()"></button>
+      <button id="Btn5" onclick="guess(5)" onmousedown="playMyAudio()"></button>
+      <button id="Btn6" onclick="guess(6)" onmousedown="playMyAudio()"></button>
+      <button id="Btn7" onclick="guess(7)" onmousedown="playMyAudio()"></button>
+      <button id="Btn8" onclick="guess(8)" onmousedown="playMyAudio()"></button>
     </div>
   </body>
 </html>

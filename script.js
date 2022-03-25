@@ -1,23 +1,31 @@
 // Global Constants
-const clueHoldTime = 1000; // light and sound time in miliseconds
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 //Global Variables
-var pattern = [3, 1, 1, 4, 2, 1, 3, 4];
+var clueHoldTime = 1000; // light and sound time in miliseconds
+var pattern = [1, 2, 1, 5, 2, 8, 6, 4];
 var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; // must be between 0.0 and 1.0
 var guessCounter = 0;
+var mistakes = 3;
 
 function startGame() {
   //initialize game variables
+  for (let i = 0; i < pattern.length; i++) {
+    pattern[i] = random(1, 8);
+  }
   progress = 0;
   gamePlaying = true;
+  mistakes = 3;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
+}
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function stopGame() {
@@ -26,6 +34,12 @@ function stopGame() {
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
+  // set clueholdtime back to orginal
+  clueHoldTime = 1000;
+}
+// display timer
+function timer() {
+  document.getElementbyId("timer").classList.remove("hidden");
 }
 // btn = number of button
 function lightButton(btn) {
@@ -39,7 +53,7 @@ function clearButton(btn) {
 function playSingleClue(btn) {
   if (gamePlaying) {
     lightButton(btn);
-    playTone(btn, clueHoldTime);
+    playMyAudio();
     // setTimeout(function used in future,
     // amount of time delay, argument needed for first parameter function)
     setTimeout(clearButton, clueHoldTime, btn);
@@ -56,6 +70,7 @@ function playClueSequence() {
     setTimeout(playSingleClue, delay, pattern[i]); // set a timeout to play that clue
     delay += clueHoldTime;
     delay += cluePauseTime;
+    clueHoldTime -= 35;
   }
 }
 
@@ -77,7 +92,13 @@ function guess(btn) {
   }
   // user selects wrong anser game over
   if (pattern[guessCounter] != btn) {
-    loseGame();
+    mistakes--;
+    alert(
+      "Wrong Choice! you have " + mistakes + " chances left."
+    );
+    if (mistakes == 0) {
+      loseGame();
+    }
   }
   // user is correct continue
   else {
@@ -100,36 +121,9 @@ function guess(btn) {
   }
 }
 
-// Sound Synthesis Functions
-const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2,
-};
-function playTone(btn, len) {
-  o.frequency.value = freqMap[btn];
-  g.gain.setTargetAtTime(volume, context.currentTime + 0.05, 0.025);
-  context.resume();
-  tonePlaying = true;
-  setTimeout(function () {
-    stopTone();
-  }, len);
+function playMyAudio() {
+  document.getElementById("cardFlipSound").play();
 }
-function startTone(btn) {
-  if (!tonePlaying) {
-    context.resume();
-    o.frequency.value = freqMap[btn];
-    g.gain.setTargetAtTime(volume, context.currentTime + 0.05, 0.025);
-    context.resume();
-    tonePlaying = true;
-  }
-}
-function stopTone() {
-  g.gain.setTargetAtTime(0, context.currentTime + 0.05, 0.025);
-  tonePlaying = false;
-}
-
 // Page Initialization
 // Init Sound Synthesizer
 var AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -140,3 +134,4 @@ g.connect(context.destination);
 g.gain.setValueAtTime(0, context.currentTime);
 o.connect(g);
 o.start(0);
+

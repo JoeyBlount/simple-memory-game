@@ -4,7 +4,7 @@
 
 Submitted by: **Joey Blount**
 
-Time spent: **2** hours spent in total
+Time spent: **4.5** hours spent in total
 
 Link to project: https://remember-me-prework.glitch.me/
 
@@ -22,42 +22,44 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
-* [ ] Buttons use a pitch (frequency) other than the ones in the tutorial
-* [ ] More than 4 functional game buttons
-* [ ] Playback speeds up on each turn
-* [ ] Computer picks a different pattern each time the game is played
-* [ ] Player only loses after 3 mistakes (instead of on the first mistake)
-* [ ] Game button appearance change goes beyond color (e.g. add an image)
-* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
+* [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [x] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [x] More than 4 functional game buttons
+* [x] Playback speeds up on each turn
+* [x] Computer picks a different pattern each time the game is played
+* [x] Player only loses after 3 mistakes (instead of on the first mistake)
+* [x] Game button appearance change goes beyond color (e.g. add an image)
+* [x] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
 * [ ] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app!
+- [x] List anything else that you can get done to improve the app!
+* [ ] Replace colors on cards to card faces.
+* [ ] Add flip animation to cards.
+* [ ] add timer for each turn and dispaly it
+* [ ] make background and text founds more complex
 
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
+![x](rememberMe-loss.gif)
+![x](rememberMe-win.gif)
 ![](gif3-link-here)
 ![](gif4-link-here)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[YOUR ANSWER HERE]
+[StackOverFlow, Grepper, W3Schools]
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+[The main challenge I overcame was learning syntax and various different html and css features. Since this is my first time dealing with css, JS, and html, I had to learn everything as I went. During the required steps it was fairly simple still because there was plenty of documentation and code provided to get where I needed to be, but after I started working on optional features, I had to teach myself Syntax and elements of all three languages as I coded. One of the things in specific I ran into troubles with was css syntax on putting in pictures. I found a couple different sources on stack overflow and Grepper using either CSS or img tags in html and the CSS one seemed like the best option. After I settled on an option for coding the image in I had issues linking the image to the code well. I soon realized I should just download the image and put it into a background remover. then put that image into assets folder to get link. Then came the CSS settings for it. Being new to CSS, the thing I struggle with most is understanding how to format each block. In general the visual aspects of this project where the most challenging since all my coding experience is in more technical programing in languages like Java and Python.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+[I am still very new to web development languages and still don't understand allot of css and html concepts very well. My main question about web developement is how to efficiently design and execute a project. During this project I just followed the steps provided and went through implementing feature by feature. A big thing that I am hoping to learn is how to design a website both functionally and visually. My memory game project, I will admit, is not very pleasing to the eye, and looks less proffessional than I would have hoped.]
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
-
-
+[If I had more time on this project I would have worked more on the last optional feature being the timer. I spent a little time on it and kept getting stuck because my knowledge in JS and html is still very limited, but if I had more time, I would try to learn more of the basics and try to figure it out. One thing I wanted to do was to turn the simon says them into a playing card memorization game where the bottom of the cards were actual faces that were "shuffled" at the start of every game. I also wanted to add more of a "flip" animation as you click the cards, but expected that to take way too much time given my current knowledge to pull off. If i had more time I would also mess around with the layout of the page. I kept my layout pretty similar to original exept for resizing the tiles, but I feel like more could be done with the layout.]
 
 ## Interview Recording URL Link
 
