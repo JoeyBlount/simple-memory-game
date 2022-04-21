@@ -3,13 +3,14 @@ const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 //Global Variables
 var clueHoldTime = 1000; // light and sound time in miliseconds
-var pattern = [1, 2, 1, 5, 2, 8, 6, 4];
+var pattern = [1, 2, 1, 5, 2, 4];
 var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; // must be between 0.0 and 1.0
 var guessCounter = 0;
 var mistakes = 3;
+var time = 10;
 
 function startGame() {
   //initialize game variables
@@ -23,6 +24,9 @@ function startGame() {
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
+  clearInterval(myInterval);
+  time = 10;
+  myInterval = setInterval(timer, 1000);
 }
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -30,17 +34,16 @@ function random(min, max) {
 
 function stopGame() {
   //initialize game variables
-  gamePlaying = false;
   // swap the Start and Stop buttons
+  clearInterval(myInterval);
+  time = 10;
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
+  document.getElementById("timer").classList.add("hidden");
   // set clueholdtime back to orginal
   clueHoldTime = 1000;
 }
-// display timer
-function timer() {
-  document.getElementbyId("timer").classList.remove("hidden");
-}
+
 // btn = number of button
 function lightButton(btn) {
   document.getElementById("Btn" + btn).classList.add("lit");
@@ -75,6 +78,7 @@ function playClueSequence() {
 }
 
 function loseGame() {
+  clearInterval(myInterval);
   stopGame();
   alert("Game Over. You lost.");
 }
@@ -90,12 +94,10 @@ function guess(btn) {
   if (!gamePlaying) {
     return;
   }
-  // user selects wrong anser game over
+  // user selects wrong answer game over
   if (pattern[guessCounter] != btn) {
     mistakes--;
-    alert(
-      "Wrong Choice! you have " + mistakes + " chances left."
-    );
+    alert("Wrong Choice! you have " + mistakes + " chances left.");
     if (mistakes == 0) {
       loseGame();
     }
@@ -111,6 +113,9 @@ function guess(btn) {
         // increment progress, play next sequence
         progress++;
         playClueSequence();
+        clearInterval(myInterval);
+        time = 10 + progress;
+        myInterval = setInterval(timer, 1000);
       }
     }
     // turn is not over continue guessing
@@ -118,6 +123,16 @@ function guess(btn) {
       // increment guess counter
       guessCounter++;
     }
+  }
+}
+// // display timer
+var myInterval;
+function timer() {
+  document.getElementById("timer").classList.remove("hidden");
+  if (time >= 0) document.getElementById("timer").innerHTML = time--;
+  else {
+    gamePlaying = false;
+    loseGame();
   }
 }
 
@@ -134,4 +149,3 @@ g.connect(context.destination);
 g.gain.setValueAtTime(0, context.currentTime);
 o.connect(g);
 o.start(0);
-

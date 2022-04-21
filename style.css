@@ -12,11 +12,29 @@ h1 {
 button {
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
+}
+#topBtnTimer {
+  display: flex;
+  justify-content: flex-start;
+}
+#timer {
+  background: white;
+  color: red;
+  width: 55px;
+  height: 40px;
+  align-self: center;
+  margin: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  font-size: 35px;
 }
 
 #startBtn {
   background: transparent;
-  background-image: url("assets\play.png");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/besgwghrewg.png?v=1648164683294");
   background-size: cover;
   height: 75px;
   width: 80px;
@@ -24,7 +42,7 @@ button {
 }
 #stopBtn {
   background: transparent;
-  background-image: url("assets\stop.png");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/image-removebg-preview%20(1)best.png?v=1648164573545");
   background-size: cover;
   height: 75px;
   width: 80px;
@@ -35,6 +53,10 @@ button {
   width: 175px;
   height: 275px;
   margin: 8px;
+  font-size: 75px;
+  vertical-align: middle;
+  color: white;
+  display: inline-block;
 }
 
 .hidden {
@@ -42,16 +64,17 @@ button {
 }
 
 #Btn1 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
+
 #Btn1:active,
 #Btn1.lit {
   background: green;
 }
 
 #Btn2 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn2:active,
@@ -60,7 +83,7 @@ button {
 }
 
 #Btn3 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn3:active,
@@ -69,7 +92,7 @@ button {
 }
 
 #Btn4 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn4:active,
@@ -78,7 +101,7 @@ button {
 }
 
 #Btn5 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn5:active,
@@ -87,7 +110,7 @@ button {
 }
 
 #Btn6 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn6:active,
@@ -96,7 +119,7 @@ button {
 }
 
 #Btn7 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn7:active,
@@ -105,7 +128,7 @@ button {
 }
 
 #Btn8 {
-  background-image: url("assets\card.jpg");
+  background-image: url("https://cdn.glitch.global/5317ded2-c469-4eca-81d2-f56d35452a4d/back_of_playcard11.jpg?v=1648159749793");
   background-size: cover;
 }
 #Btn8:active,
